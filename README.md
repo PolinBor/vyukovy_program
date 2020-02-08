@@ -78,7 +78,7 @@ def genSum3(countPr):
         b = randint(0, 1000-a)
 ```
 
-#### oÖdečítání "-"
+#### Odečítání "-"
 * **1 - jednoduchý** - odečítání do 20
 * **2 - střední** - odečítání do 100
 * **3 - složitý** - odečítání do 1000
