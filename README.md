@@ -78,11 +78,12 @@ def genSum3(countPr):
         b = randint(0, 1000-a)
 ```
 
-#### Pdečítání "-"
+#### oÖdečítání "-"
 * **1 - jednoduchý** - odečítání do 20
 * **2 - střední** - odečítání do 100
 * **3 - složitý** - odečítání do 1000
-Pro odečítání kód je stejný, odlišnost jen a - b
+
+Pro odečítání kód je stejný, odlišnost jen a - b.
 
 #### Násobení "*"
 * **1 - jednoduchý** - násobilka
