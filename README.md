@@ -17,7 +17,7 @@ Cílem tohoto programu je procvičení sčítání/odečítání/násobení/děl
 
 ## Použití
 
-Program se spouští spuštěním [vyukovy_program.py](vyukovy_program/vyukovy_program.py). Po spouštění tohoto programu se objeví okno s menu.
+Program se spouští spuštěním [vyukovy_program.py](vyukovy_program.py). Po spouštění tohoto programu se objeví okno s menu.
 ![menu_1](Pictures/menu_1.png)
 Uživatel vybere nejakou kaategorii y menu. Pak se objeví další menu s úrovní složitostí.
 ![menu_2](Pictures/menu_2.png)
