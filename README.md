@@ -41,3 +41,135 @@ Za 1 bod
 ![b_1](Pictures/b_1.png)
 Za 0 bodů
 ![b_0](Pictures/b_0.png)
+
+### Kategorii
+
+#### Sčítání "+"
+* **1 - jednoduchý** - sčítání do 20
+```python
+...
+def genSum1(countPr):
+...
+  for i in range(countPr):
+        countAnswer = 3
+        a = randint(0,20)
+        b = randint(0, 20-a)
+        x = a + b
+        excercise = (f'{a} + {b} = ')
+        vysledek = int(input(excercise))
+...
+```
+* **2 - střední** - sčítání do 100
+```python
+...
+def genSum2(countPr):
+...
+# liší se od 1 jen
+        a = randint(0,100)
+        b = randint(0, 100-a)
+```
+* **3 - složitý** - sčítání do 1000
+```python
+...
+def genSum3(countPr):
+...
+# liší se od 1 a 2 jen
+        a = randint(0,1000)
+        b = randint(0, 1000-a)
+```
+
+#### Pdečítání "-"
+* **1 - jednoduchý** - odečítání do 20
+* **2 - střední** - odečítání do 100
+* **3 - složitý** - odečítání do 1000
+Pro odečítání kód je stejný, odlišnost jen a - b
+
+#### Násobení "*"
+* **1 - jednoduchý** - násobilka
+```python
+...
+def genPro1(countPr):
+...
+  for i in range(countPr):
+        countAnswer = 3
+        a = randint(0,9)
+        b = randint(0,9)
+        x = a * b
+        excercise = (f'{a} * {b} = ')
+        vysledek = int(input(excercise))
+...
+```
+* **2 - střední** - násobení dvoucíferné číslo na koncí s nulou a jednocíferné (0 až 9)
+```python
+...
+def genPro2(countPr):
+...
+  for i in range(countPr):
+        countAnswer = 3
+        # náhodné vybírání, jaké číslo bude na prvním místě jednociferné nebo dvouciferné
+        if randint(0,1) == 0:
+            a = randrange(10,90,10)
+            b = randint(0,9)
+        else:
+            a = randint(0,9)
+            b = randrange(10,90,10)
+        x = a * b
+        excercise = (f'{a} * {b} = ')
+        vysledek = int(input(excercise))
+        vysledek = int(input(excercise))
+...
+```
+* **3 - složitý** - násobení dvoucíferné číslo a jednocíferné (0 až 9)
+```python
+...
+def genPro3(countPr):
+...
+# liší se jen geerováním čísel
+            a = randint(10,99)
+            b = randint(0,9)
+
+```
+
+#### Dělení "/"
+* **1 - jednoduchý** - násobilka, ale dělení
+```python
+...
+def genDiv1(countPr):
+...
+  for i in range(countPr):
+        countAnswer = 3
+        a = randint(1,9)
+        b = randint(1,9)
+        # k - výsledek násobení dvou náhodně vygenerovaných čísel
+        k = a * b
+        
+        # náhodný výběr čísla, kterým budeme dělit
+        if randint(0,1) == 0:
+            x = a
+            excercise = (f'{k} / {b} = ')
+        else:
+            x = b
+            excercise = (f'{k} / {a} = ')
+        vysledek = int(input(excercise))
+...
+```
+* **2 - střední** - dělení jednocíferným číslem nebo dvoucíferným s nulou na konci 
+```python
+...
+def genDiv2(countPr):
+...
+# liší se od 1 jen
+        a = randrange(10,90,10)
+        b = randint(1,9)
+```
+
+* **3 - složitý** - dělení jednocíferným číslem nebo dvoucíferným
+```python
+...
+def genDiv3(countPr):
+...
+# liší se od 1 a 2 jen
+        a = randint(10,99)
+        b = randint(1,9)
+```
+
