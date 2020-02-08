@@ -248,8 +248,10 @@ def genDiv1(countPr):
         countAnswer = 3
         a = randint(1,9)
         b = randint(1,9)
+        # k - výsledek násobení dvou náhodně vygenerovaných čísel
         k = a * b
         
+        # náhodný výběr čísla, kterým budeme dělit
         if randint(0,1) == 0:
             x = a
             excercise = (f'{k} / {b} = ')
