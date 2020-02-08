@@ -29,6 +29,9 @@ Pak začíná náhodné generování příkladú podle kategorii a úrovní slo�
 ![priklady](Pictures/priklady.png)
 Po ukončení počítání program výpiše prospěšnost: počet správně řešených příkladů y celkového počtů, počet získaných bodů a procentní úspěšnost.
 ![prospech](Pictures/prospech.png)
+
+### Bodování
+
 Každý příklad je za 3 body. Uživatel na 3 pokusy na řešení prikladu, každý další pokus -1 bod. Např. 
 Za 3 body
 ![b_3](Pictures/b_3.png)
