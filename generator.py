@@ -187,6 +187,7 @@ def genPro2(countPr):
     maxPoints = countPr * 3
     for i in range(countPr):
         countAnswer = 3
+        # náhodné vybírání, jaké číslo bude na prvním místě jednociferné nebo dvouciferné
         if randint(0,1) == 0:
             a = randrange(10,90,10)
             b = randint(0,9)
