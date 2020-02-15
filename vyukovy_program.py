@@ -61,8 +61,11 @@ def CountRep():
         Menu()
 
 def Sum():
+    operace = "+"
     if level == 1:
-        generator.genSum1(Priklady)
+        u = 0
+        v = 20
+        w = 1
     elif level == 2:
         generator.genSum2(Priklady)
     elif level == 3:
