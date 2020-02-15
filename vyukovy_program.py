@@ -67,37 +67,62 @@ def Sum():
         v = 20
         w = 1
     elif level == 2:
-        generator.genSum2(Priklady)
+        u = 20
+        v = 100
+        w = 1
     elif level == 3:
-        generator.genSum3(Priklady)
-    return
+        u = 100
+        v = 1000
+        w = 1
+    generator.Pocet(Priklady, u, v, w, operace)
 
 def Difference():
-    if level == 1:
-        generator.genDif1(Priklady)
+    operace = "-"
+    level == 1:
+        u = 0
+        v = 20
+        w = 1
     elif level == 2:
-        generator.genDif2(Priklady)
+        u = 20
+        v = 100
+        w = 1
     elif level == 3:
-        generator.genDif3(Priklady)
-    return
+        u = 100
+        v = 1000
+        w = 1
+    generator.Pocet(Priklady, u, v, w, operace)
 
 def Product():
+    operace = "*"
     if level == 1:
-        generator.genPro1(Priklady)
+        u = 0
+        v = 9
+        w = 1
     elif level == 2:
-        generator.genPro2(Priklady)
+        u = 10
+        v = 90
+        w = 10
     elif level == 3:
-        generator.genPro3(Priklady)
-    return
+        u = 10
+        v = 99
+        w = 1
+    generator.Pocet(Priklady, u, v, w, operace)
 
 def Division():
+    operace = "/"
     if level == 1:
-        generator.genDiv1(Priklady)
+        u = 1
+        v = 9
+        w = 1
     elif level == 2:
-        generator.genDiv2(Priklady)
+        u = 10
+        v = 90
+        w = 10
     elif level == 3:
-        generator.genDiv3(Priklady)
-    return
+        u = 10
+        v = 99
+        w = 1
+    generator.Pocet(Priklady, u, v, w, operace)
 
 print("VÝUKOVÝ PROGRAM")
 Menu()
