@@ -44,6 +44,8 @@ Za 0 bodů
 
 ### Kategorii
 
+Pro káždou kategorii mám funkci na generování prikladů. Jedná funkce na 3 úrovní složitosti, která má v parametru hodnoty pro rozsah generování
+
 #### Sčítání "+"
 * **1 - jednoduchý** - sčítání do 20
 ```python
