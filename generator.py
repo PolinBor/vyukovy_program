@@ -3,46 +3,34 @@ from random import randint, randrange
 sPoints = []
 sCountEx = []
 
-def genSum1(countPr):
+def Pocet(countPr, u, v, w, operace):
     sPoints.clear()
     sCountEx.clear()
 
     countEx = 0
     Points = 0
     maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(0,20)
-        b = randint(0, 20-a)
-        x = a + b
-        excercise = (f'{a} + {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
 
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-    
-    Vysledky(countEx1, countPr, Points1, maxPoints)
+    vysledek = 0
+    x = 0
+    countAnswer = 3
 
-def genSum2(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(20, 100)
-        b = randint(0, 100-a)
-        x = a + b
-        excercise = (f'{a} + {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
+    if operace == "+":
+        for i in range(countPr):
+            vysledek, x = genSum(vysledek, x, u, v)
+            Reseni(vysledek, x, Points, countAnswer, countEx)
+    elif operace == "-":
+        for i in range(countPr):
+            vysledek, x = genDif(vysledek, x, u, v)
+            Reseni(vysledek, x, Points, countAnswer, countEx)
+    elif operace == "*":
+        for i in range(countPr):
+            vysledek, x = genPro(vysledek, x, u, v, w)
+            Reseni(vysledek, x, Points, countAnswer, countEx)
+    elif operace == "/":
+        for i in range(countPr):
+            vysledek, x = genDiv(vysledek, x, u, v, w)
+            Reseni(vysledek, x, Points, countAnswer, countEx)
     
     countEx1 = 0
     Points1 = 0
@@ -53,290 +41,53 @@ def genSum2(countPr):
     
     Vysledky(countEx1, countPr, Points1, maxPoints)
 
-def genSum3(countPr):
-    sPoints.clear()
-    sCountEx.clear()
+def genSum(vysledek, x, u, v):
+    a = randint(u,v)
+    b = randint(0, v-a)
+    x = a + b
+    excercise = (f'{a} + {b} = ')
+    vysledek = int(input(excercise))        
+    return vysledek, x           
 
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(100, 1000)
-        b = randint(0, 1000-a)
-        x = a + b
-        excercise = (f'{a} + {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-    
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-    
-    Vysledky(countEx1, countPr, Points1, maxPoints)        
+def genDif(vysledek, x, u, v):
+    a = randint(u,v)
+    b = randint(0, a)
+    x = a - b
+    excercise = (f'{a} - {b} = ')
+    vysledek = int(input(excercise))        
+    return vysledek, x
 
-def genDif1(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(0,20)
-        b = randint(0, a)
-        x = a - b
-        excercise = (f'{a} - {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genDif2(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(20,100)
-        b = randint(0, a)
-        x = a - b
-        excercise = (f'{a} - {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genDif3(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(100,1000)
-        b = randint(0, a)
-        x = a - b
-        excercise = (f'{a} - {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genPro1(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(0,9)
+def genPro(vysledek, x, u, v, w):
+    if randint(0,1) == 0:
+        a = randrange(u, v, w)
         b = randint(0,9)
-        x = a * b
-        excercise = (f'{a} * {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
+    else:
+        a = randint(0,9)
+        b = randrange(u, v, w)
+    x = a * b
+    excercise = (f'{a} * {b} = ')
+    vysledek = int(input(excercise))
+    return vysledek, x
 
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genPro2(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        # náhodné vybírání, jaké číslo bude na prvním místě jednociferné nebo dvouciferné
-        if randint(0,1) == 0:
-            a = randrange(10,90,10)
-            b = randint(0,9)
-        else:
-            a = randint(0,9)
-            b = randrange(10,90,10)
-        x = a * b
-        excercise = (f'{a} * {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genPro3(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        if randint(0,1) == 0:
-            a = randint(10,99)
-            b = randint(0,9)
-        else:
-            a = randint(0,9)
-            b = randint(10,99)
-        x = a * b
-        excercise = (f'{a} * {b} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genDiv1(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(1,9)
-        b = randint(1,9)
-        # k - výsledek násobení dvou náhodně vygenerovaných čísel
-        k = a * b
+def genDiv(vysledek, x, u, v, w):
+    a = randrange(u, v, w)
+    b = randint(1,9)
+    k = a * b
         
-        # náhodný výběr čísla, kterým budeme dělit
-        if randint(0,1) == 0:
-            x = a
-            excercise = (f'{k} / {b} = ')
-        else:
-            x = b
-            excercise = (f'{k} / {a} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
+    if randint(0,1) == 0:
+        x = a
+        excercise = (f'{k} / {b} = ')
+    else:
+        x = b
+        excercise = (f'{k} / {a} = ')
+    vysledek = int(input(excercise))
+    return vysledek, x
 
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genDiv2(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randrange(10,90,10)
-        b = randint(1,9)
-        k = a * b
-        
-        if randint(0,1) == 0:
-            x = a
-            excercise = (f'{k} / {b} = ')
-        else:
-            x = b
-            excercise = (f'{k} / {a} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def genDiv3(countPr):
-    sPoints.clear()
-    sCountEx.clear()
-
-    countEx = 0
-    Points = 0
-    maxPoints = countPr * 3
-    for i in range(countPr):
-        countAnswer = 3
-        a = randint(10,99)
-        b = randint(1,9)
-        k = a * b
-        
-        if randint(0,1) == 0:
-            x = a
-            excercise = (f'{k} / {b} = ')
-        else:
-            x = b
-            excercise = (f'{k} / {a} = ')
-        vysledek = int(input(excercise))
-        Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints)
-
-    countEx1 = 0
-    Points1 = 0
-    for z in sPoints:
-        Points1 += z
-    for y in sCountEx:
-        countEx1 += y
-
-    Vysledky(countEx1, countPr, Points1, maxPoints)
-
-def Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints):
+def Reseni(vysledek, x, Points, countAnswer, countEx):
     if vysledek == x:
         print("Správně")
         print("-----------------------------")
-        countAnswer = 3
+        countAnswer = countAnswer
         Points += countAnswer
         countEx += 1
     elif vysledek != x:
@@ -366,6 +117,7 @@ def Reseni(vysledek, x, Points, countAnswer, countEx, countPr, maxPoints):
             countEx += 1
         elif countAnswer == 0:
             print("Správná odpověď je: ", x)
+            print("-----------------------------")
     
     
     sPoints.append(Points)
