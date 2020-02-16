@@ -16,20 +16,20 @@ def Pocet(countPr, u, v, w, operace):
     countAnswer = 3
 
     if operace == "+":
-        for i in range(countPr):
-            vysledek, x = genSum(vysledek, x, u, v)
+        for _ in range(countPr):
+            vysledek, x = genSum(u, v)
             Reseni(vysledek, x, Points, countAnswer, countEx)
     elif operace == "-":
-        for i in range(countPr):
-            vysledek, x = genDif(vysledek, x, u, v)
+        for _ in range(countPr):
+            vysledek, x = genDif(u, v)
             Reseni(vysledek, x, Points, countAnswer, countEx)
     elif operace == "*":
-        for i in range(countPr):
-            vysledek, x = genPro(vysledek, x, u, v, w)
+        for _ in range(countPr):
+            vysledek, x = genPro(u, v, w)
             Reseni(vysledek, x, Points, countAnswer, countEx)
     elif operace == "/":
-        for i in range(countPr):
-            vysledek, x = genDiv(vysledek, x, u, v, w)
+        for _ in range(countPr):
+            vysledek, x = genDiv(u, v, w)
             Reseni(vysledek, x, Points, countAnswer, countEx)
     
     countEx1 = 0
@@ -41,7 +41,7 @@ def Pocet(countPr, u, v, w, operace):
     
     Vysledky(countEx1, countPr, Points1, maxPoints)
 
-def genSum(vysledek, x, u, v):
+def genSum(u, v):
     a = randint(u,v)
     b = randint(0, v-a)
     x = a + b
@@ -49,7 +49,7 @@ def genSum(vysledek, x, u, v):
     vysledek = int(input(excercise))        
     return vysledek, x           
 
-def genDif(vysledek, x, u, v):
+def genDif(u, v):
     a = randint(u,v)
     b = randint(0, a)
     x = a - b
@@ -57,7 +57,7 @@ def genDif(vysledek, x, u, v):
     vysledek = int(input(excercise))        
     return vysledek, x
 
-def genPro(vysledek, x, u, v, w):
+def genPro(u, v, w):
     if randint(0,1) == 0:
         a = randrange(u, v, w)
         b = randint(0,9)
@@ -69,7 +69,7 @@ def genPro(vysledek, x, u, v, w):
     vysledek = int(input(excercise))
     return vysledek, x
 
-def genDiv(vysledek, x, u, v, w):
+def genDiv(u, v, w):
     a = randrange(u, v, w)
     b = randint(1,9)
     k = a * b
