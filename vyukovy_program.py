@@ -5,7 +5,7 @@ import generator
 def Menu():
     # MENU
     print("----------------")
-    print("Sčítanání - 1")
+    print("Sčítání   - 1")
     print("Odečítání - 2")
     print("Násobení  - 3")
     print("Dělení    - 4")
@@ -78,7 +78,7 @@ def Sum():
 
 def Difference():
     operace = "-"
-    level == 1:
+    if level == 1:
         u = 0
         v = 20
         w = 1
